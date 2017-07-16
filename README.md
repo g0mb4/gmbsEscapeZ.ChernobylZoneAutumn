@@ -1,7 +1,7 @@
 # gmbsEscapeZ.ChernobylZoneAutumn
 MP mission for Arma 3
 
-Worksop link: [gmbsEscapeZ.ChernobylZoneAutumn](http://steamcommunity.com/sharedfiles/filedetails/?id=990028493)
+Workshop link: [gmbsEscapeZ.ChernobylZoneAutumn](http://steamcommunity.com/sharedfiles/filedetails/?id=990028493)
 
 ## Required mods
 [Chernobyl Zone](http://steamcommunity.com/sharedfiles/filedetails/?id=692082939)
