@@ -1,4 +1,5 @@
-_pos = ["ESCZ_Editor_jeepSpawn"] call ESCZ_fn_getRandomPosition;
+_mrk = ESCZ_jeepSpawns call BIS_fnc_selectRandom;
+_pos = getMarkerPos _mrk;
 
 _veh = "O_G_Offroad_01_F" createVehicle _pos;
 _veh setFuel 0.25;

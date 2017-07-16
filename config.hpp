@@ -1,6 +1,6 @@
 ESCZ_admins =
 [
-	"76561197990625806"
+	//"76561197990625806"
 ];
 
 // PLAYER START --------------------------------------------------------------
@@ -15,8 +15,8 @@ ESCZ_loadoutSecondaryMagazinesCount = 2;		// 2
 ESCZ_loadoutTools =
 [
 	"ItemMap",						// ItemRadio, ItemCompass, NVGoggles, Rangefinder, Binocular
-	"ItemGPS",
-	"ItemWatch"
+	"ItemWatch",
+	"ItemCompass"
 ];
 ESCZ_loadoutItems =
 [
@@ -26,7 +26,7 @@ ESCZ_loadoutItems =
 
 // LOOT START ----------------------------------------------------------------
 ESCZ_showLoot = false;		// markers on map, for debug
-ESCZ_lootProbability = 25; 	// %
+ESCZ_lootProbability = 33; 	// %
 // LOOT END ----------------------------------------------------------------
 
 // VEHICLES START -------------------------------------------------------------
@@ -37,7 +37,15 @@ ESCZ_Helis =
 	"B_Heli_Transport_03_unarmed_F",
 	"O_Heli_Transport_04_box_black_F"
 ];
+
 ESCZ_showJeep = false;
+ESCZ_jeepSpawns =
+[
+	"ESCZ_Editor_jeep1",
+	"ESCZ_Editor_jeep2",
+	"ESCZ_Editor_jeep3",
+	"ESCZ_Editor_jeep4"
+];
 // VEHICLES END -------------------------------------------------------------
 
 // RADIATION ZONES START -----------------------------------------------------
@@ -63,8 +71,8 @@ ESCZ_aiInGroupHardMax = 6;
 
 // ZOMBIES START  -----------------------------------------------------
 ESCZ_enableZombies = true;
-ESCZ_showZombies = true;
-ESCZ_zombieDamage = 10;
+ESCZ_showZombies = false;
+ESCZ_zombieDamage = 5;
 
 ESCZ_ZombiesEasy = 10;
 ESCZ_ZombiesMedium = 50;
@@ -73,6 +81,4 @@ ESCZ_ZombiesHard = 75;
 ESCZ_maxZombiesEasy = 50;
 ESCZ_maxZombiesMedium = 100;
 ESCZ_maxZombiesHard = 200;
-
-
 // ZOMBIES END  -----------------------------------------------------

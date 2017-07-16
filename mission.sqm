@@ -8,11 +8,11 @@ class EditorData
 	toggles=1537;
 	class ItemIDProvider
 	{
-		nextID=19;
+		nextID=25;
 	};
 	class MarkerIDProvider
 	{
-		nextID=8;
+		nextID=10;
 	};
 	class Camera
 	{
@@ -53,12 +53,20 @@ randomSeed=6097991;
 class ScenarioData
 {
 	author="gmb_";
+	overviewText="You are a member of a scout team which was sent to Chernobyl to investigate the accident. You found zombies (of course zombies ...) and enemy forces. The only way to get out is to find gear in the near village Novoshepelychi (and maybe a broken jeep which is in that area) and travel to the safe zone by a broken helicopter belongs to the enemy. ";
+	onLoadMission="You are a member of a scout team which was sent to Chernobyl to investigate the accident. You found zombies (of course zombies ...) and enemy forces. The only way to get out is to find gear in the near village Novoshepelychi (and maybe a broken jeep which is in that area) and travel to the safe zone by a broken helicopter belongs to the enemy. ";
+	loadScreen="load.jpg";
+	briefing=0;
+	debriefing=0;
 	showHUD=0;
+	showUAVFeed=0;
 	disabledAI=1;
+	respawn=3;
 	class Header
 	{
 		maxPlayers=4;
 	};
+	wreckRemovalMaxTime=3600;
 };
 class CustomAttributes
 {
@@ -108,7 +116,7 @@ class CustomAttributes
 										"STRING"
 									};
 								};
-								value="None";
+								value="Counter";
 							};
 						};
 					};
@@ -160,25 +168,32 @@ class Mission
 {
 	class Intel
 	{
-		timeOfChanges=3600;
+		briefingName="gmb's EscapeZ (Chernobyl)";
+		timeOfChanges=10831.089;
 		startWeather=0.1;
-		startWind=0.1;
+		startWind=0.33142292;
+		startWindDir=10;
+		startRain=0.32861331;
 		startWaves=0.1;
 		forecastWeather=0.1;
-		forecastWind=0.1;
+		forecastWind=0.3258037;
 		forecastWaves=0.1;
+		forecastRain=0.32861331;
 		forecastLightnings=0.1;
-		year=2017;
-		month=10;
-		day=20;
-		hour=16;
+		forecastWindDir=10;
+		rainForced=1;
+		windForced=1;
+		year=1986;
+		month=4;
+		day=28;
+		hour=6;
 		minute=0;
 		startFogDecay=0.014;
 		forecastFogDecay=0.014;
 	};
 	class Entities
 	{
-		items=10;
+		items=13;
 		class Item0
 		{
 			dataType="Group";
@@ -431,70 +446,62 @@ class Mission
 		class Item1
 		{
 			dataType="Marker";
-			position[]={338.58453,2.9411774,18969.963};
+			position[]={338.58499,3.719074e+016,18969.963};
 			name="ESCZ_Editor_spawnArea";
 			markerType="RECTANGLE";
 			type="rectangle";
 			colorName="ColorGreen";
-			alpha=0.26702821;
+			alpha=0;
 			a=250;
 			b=800;
 			id=10;
+			atlOffset=3.719074e+016;
 		};
 		class Item2
 		{
 			dataType="Marker";
-			position[]={1793.3007,9.294117,18673.525};
-			name="ESCZ_Editor_jeepSpawn";
+			position[]={8222.8984,2.2372696e+010,13998.207};
+			name="ESCZ_Editor_heliSpawn";
 			markerType="RECTANGLE";
 			type="rectangle";
-			colorName="ColorBlue";
-			alpha=0.2458488;
-			a=300;
-			b=800;
-			id=11;
+			alpha=0;
+			a=800;
+			b=200;
+			id=12;
+			atlOffset=2.2372696e+010;
 		};
 		class Item3
 		{
 			dataType="Marker";
-			position[]={8222.8984,7.5294113,13998.207};
-			name="ESCZ_Editor_heliSpawn";
+			position[]={7248.8232,2.2347923e+010,6401.7158};
+			name="ESCZ_Editor_rad1";
 			markerType="RECTANGLE";
 			type="rectangle";
-			a=800;
-			b=200;
-			id=12;
+			colorName="ColorRed";
+			fillName="Grid";
+			a=7500;
+			b=7500;
+			id=13;
+			atlOffset=2.2347923e+010;
 		};
 		class Item4
 		{
 			dataType="Marker";
-			position[]={7248.8232,1.1184439e+013,6401.7158};
-			name="ESCZ_Editor_rad1";
+			position[]={17095.85,3.719074e+016,11597.804};
+			name="ESCZ_Editor_rad2";
 			markerType="RECTANGLE";
 			type="rectangle";
-			colorName="ColorBrown";
-			a=7500;
-			b=7500;
-			id=13;
-			atlOffset=1.1184439e+013;
+			colorName="ColorRed";
+			fillName="Grid";
+			a=3500;
+			b=9000;
+			id=14;
+			atlOffset=3.719074e+016;
 		};
 		class Item5
 		{
 			dataType="Marker";
-			position[]={17095.85,-9.492411e-037,11597.804};
-			name="ESCZ_Editor_rad2";
-			markerType="RECTANGLE";
-			type="rectangle";
-			colorName="ColorBrown";
-			a=3500;
-			b=9000;
-			id=14;
-			atlOffset=-12.941635;
-		};
-		class Item6
-		{
-			dataType="Marker";
-			position[]={17518.482,8.6954105e+021,988.78601};
+			position[]={17838.117,6.7866211,1338.4448};
 			name="ESCZ_Editor_escape";
 			markerType="RECTANGLE";
 			type="rectangle";
@@ -502,49 +509,85 @@ class Mission
 			a=500;
 			b=500;
 			id=15;
-			atlOffset=8.6954105e+021;
+			atlOffset=-0.74279022;
 		};
-		class Item7
+		class Item6
 		{
 			dataType="Marker";
-			position[]={1775.282,8.5963674e+021,18647.434};
+			position[]={1775.282,2.8072594e+013,18647.434};
 			name="ESCZ_Editor_enemyEasy";
 			markerType="RECTANGLE";
 			type="rectangle";
 			colorName="ColorYellow";
-			alpha=0.56777352;
+			alpha=0;
 			a=400;
 			b=900;
 			id=16;
-			atlOffset=8.5963674e+021;
+			atlOffset=2.8072594e+013;
 		};
-		class Item8
+		class Item7
 		{
 			dataType="Marker";
-			position[]={4633.0542,4.590213e+019,16367.48};
+			position[]={4633.0542,3.719074e+016,16367.48};
 			name="ESCZ_Editor_enemyMedium";
 			markerType="RECTANGLE";
 			type="rectangle";
 			colorName="ColorOrange";
-			alpha=0.89393449;
+			alpha=0;
 			a=1500;
-			b=1930.0352;
+			b=1930.035;
 			id=17;
-			atlOffset=4.590213e+019;
+			atlOffset=3.719074e+016;
 		};
-		class Item9
+		class Item8
 		{
 			dataType="Marker";
-			position[]={7648.7993,-9.492411e-037,15125.553};
+			position[]={7648.7988,2.2356181e+010,15125.553};
 			name="ESCZ_Editor_enemyHard";
 			markerType="RECTANGLE";
 			type="ellipse";
 			colorName="ColorRed";
-			alpha=0.7245;
-			a=997.20752;
-			b=1030.7163;
+			alpha=0;
+			a=997.20801;
+			b=1030.7159;
 			id=18;
-			atlOffset=-7.5294113;
+			atlOffset=2.2356181e+010;
+		};
+		class Item9
+		{
+			dataType="Marker";
+			position[]={1759.08,1.3040361e+010,17850.275};
+			name="ESCZ_Editor_jeep4";
+			type="mil_unknown";
+			id=20;
+			atlOffset=1.3040361e+010;
+		};
+		class Item10
+		{
+			dataType="Marker";
+			position[]={1922.952,1.3040361e+010,18947.398};
+			name="ESCZ_Editor_jeep1";
+			type="mil_unknown";
+			id=22;
+			atlOffset=1.3040361e+010;
+		};
+		class Item11
+		{
+			dataType="Marker";
+			position[]={1898.785,1.3040361e+010,18603.084};
+			name="ESCZ_Editor_jeep2";
+			type="mil_unknown";
+			id=23;
+			atlOffset=1.3040361e+010;
+		};
+		class Item12
+		{
+			dataType="Marker";
+			position[]={1955.7581,1.3040361e+010,18273.512};
+			name="ESCZ_Editor_jeep3";
+			type="mil_unknown";
+			id=24;
+			atlOffset=1.3040361e+010;
 		};
 	};
 };
